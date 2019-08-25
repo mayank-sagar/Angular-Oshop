@@ -1,1 +1,27 @@
-<a routerLink="/admin/product/new" class="btn btn-primary">New Product</a>
+<p>
+    <a routerLink="/admin/product/new" class="btn btn-primary">New Product</a>
+</p>
+
+<p>
+    <input 
+    #query
+    (keyup)="filter(query.value)"
+    type="text"
+    class="form-control"
+    placeholder="Search..."
+    >
+</p>
+<table class="table">
+    <thead>
+        <th>Title</th>
+        <th>Price</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.payload.toJSON().title}}</td>
+            <td>{{product.payload.toJSON().price}}</td>
+            <td><a [routerLink]="['/admin/products/',product.key]">edit</a></td>
+        </tr>
+    </tbody>
+</table>    
