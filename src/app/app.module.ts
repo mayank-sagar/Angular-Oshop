@@ -28,6 +28,7 @@ import {FormsModule} from '@angular/forms';
 import {ProductService} from './product.service';
 import {CustomFormsModule} from 'ng2-validation';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import {CustomFormsModule} from 'ng2-validation';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    CustomFormsModule
+    CustomFormsModule,
+
   ],
   providers: [
     AuthService,

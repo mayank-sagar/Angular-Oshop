@@ -18,9 +18,9 @@
         <th></th>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
-            <td>{{product.payload.toJSON().title}}</td>
-            <td>{{product.payload.toJSON().price}}</td>
+        <tr *ngFor="let product of filteredProducts">
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
             <td><a [routerLink]="['/admin/products/',product.key]">edit</a></td>
         </tr>
     </tbody>
