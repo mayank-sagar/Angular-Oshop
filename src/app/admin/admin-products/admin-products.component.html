@@ -11,7 +11,42 @@
     placeholder="Search..."
     >
 </p>
-<table class="table">
+
+
+
+<ngx-datatable class="bootstrap table-bordered" [count]="4" [rows]="filteredProducts" 
+
+[loadingIndicator]="loadingIndicator"
+[limit]="10"
+[columnMode]="'force'" 
+[headerHeight]="50" 
+[footerHeight]="50"
+[rowHeight]="'auto'" 
+[reorderable]="reorderable"
+ [sortType]="multi" 
+ [virtualization]="false"
+[sorts]="[{prop: 'title', dir: 'desc'},{prop: 'price', dir: 'desc'}]"
+>
+    <ngx-datatable-column name="Title">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.title }}
+        </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Price">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.price }}
+        </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Edit">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            <a [routerLink]="['/admin/products/',row.key]">Edit</a>
+        </ng-template>
+    </ngx-datatable-column>
+
+</ngx-datatable>
+<!-- <table class="table">
     <thead>
         <th>Title</th>
         <th>Price</th>
@@ -24,4 +59,4 @@
             <td><a [routerLink]="['/admin/products/',product.key]">edit</a></td>
         </tr>
     </tbody>
-</table>    
+</table>     -->

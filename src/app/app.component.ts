@@ -10,11 +10,12 @@ import {UserService} from './user.service';
 export class AppComponent {
   constructor(private userService:UserService,private auth:AuthService,router:Router) {
     auth.user$.subscribe(user => {
-      if(user) {
+      if(!user) return;
         userService.save(user);
         let redirectUrl = localStorage.getItem('redirectUrl');
-        router.navigateByUrl(redirectUrl);
-      }
+        if(!redirectUrl) return;
+        localStorage.removeItem('redirectUrl');          
+          router.navigateByUrl(redirectUrl);
     });
   console.log("App called");
   }

@@ -27,6 +27,9 @@ import { CategoryService } from './category.service';
 import {FormsModule} from '@angular/forms';
 import {ProductService} from './product.service';
 import {CustomFormsModule} from 'ng2-validation';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -43,6 +46,8 @@ import {CustomFormsModule} from 'ng2-validation';
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ import {CustomFormsModule} from 'ng2-validation';
     AngularFireAuthModule,
     FormsModule,
     CustomFormsModule,
-
+    NgxDatatableModule,
   ],
   providers: [
     AuthService,

@@ -13,8 +13,8 @@ export class AdminProductsComponent implements OnInit ,OnDestroy{
   public filteredProducts:any[];
 
   constructor(private productService: ProductService) { 
-    this.subscription = this.productService.getAll().subscribe(products => this.filteredProducts = this.products = products);
-   
+    this.subscription = this.productService.getAll().
+    subscribe(products => this.filteredProducts = this.products = products);
   }
 
   ngOnInit() {
