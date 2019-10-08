@@ -18,15 +18,10 @@ export class ProductCardComponent  {
   this.cartService.addToCart(this.product);
   }
 
-  removeFromCart() {
-    this.cartService.removeFromCart(this.product);
-  }
+
 
   getQuantity() {
     if(!this.shoppingCart) return 0;
-    console.log(this.shoppingCart);
-    let item = this.shoppingCart.itemsMap[this.product.key];
-  
-    return item ? item.quantity : 0;
+    return this.shoppingCart.getQuantity(this.product);
   }
 }
