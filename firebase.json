@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/shoppingCart",
+    "rewrites":[{
+      "source":"**",
+      "destination":"/index.html" 
+    }
+  ]
+  }
+}
